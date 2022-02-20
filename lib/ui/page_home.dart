@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thingiverse2/app_icon_icons.dart';
 import 'package:thingiverse2/items_list.dart';
 import 'package:thingiverse2/ui/page_categories.dart';
 
@@ -66,9 +65,9 @@ class PageHomeState extends State<PageHome> {
                 label: "0w0"),
             BottomNavigationBarItem(
                 icon: Icon(
-                  AppIcon.categories,
+                  Icons.source_rounded,
                 ),
-                activeIcon: Icon(AppIcon.categories),
+                activeIcon: Icon(Icons.source_rounded),
                 label: "0w0"),
             BottomNavigationBarItem(
                 icon: Icon(

@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:thingiverse2/things.dart';
+import 'package:thingiverse2/models/top_things_fifteen.dart';
 
 class ItemsList extends StatefulWidget {
   get hits => null;
@@ -13,11 +12,11 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  late Future<ThingsList> thingslist;
+  late Future<TopThings> thingslist;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<ThingsList>(
+    return FutureBuilder<TopThings>(
       future: thingslist,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
@@ -26,26 +25,26 @@ class _ItemsListState extends State<ItemsList> {
               return Card(
                 //elevation: 5,
                   child: ListTile(
-                    title: Text(snapshot.data!.hits[index].name),
-                    subtitle: Text(snapshot.data!.hits[index].id.toString()),
+                    title: Text(snapshot.data!.hits![index].createdAt!),
+                    subtitle: Text(snapshot.data!.hits![index].id.toString()),
                     leading: Image.network(
-                        snapshot.data!.hits[index].image),
+                        snapshot.data!.hits![index].previewImage!),
                     isThreeLine: false,
 
                   ));
             },
-            itemCount: snapshot.data!.hits.length,
+            itemCount: snapshot.data!.hits!.length,
           );
         } else if (snapshot.hasError) {
           return Text('Error' + snapshot.error.toString());
         }
-        return Center(child: CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       },
     );
   }
 
   @override
   void initState() {
-    thingslist = loadThings() as Future<ThingsList>;
+    thingslist = loadThings();
   }
 }
