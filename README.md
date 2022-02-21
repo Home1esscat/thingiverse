@@ -1,7 +1,10 @@
-# Thingiverse client
+# Thingiverse mobile client
 
-Попытка создать мобильный клиент сайта thingiverse.com  
+Мобильный клиент сайта thingiverse.com  
 Разрабатывается в свободное время с целью изучения возможностей Flutter
 
+
+
+![alt text](https://github.com/Home1esscat/thingiverse/blob/master/design/preview4.png) | 
 
 
