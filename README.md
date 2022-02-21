@@ -1,5 +1,7 @@
-# thingiverse2
+# Thingiverse client
 
-Thingiverse client 
+Попытка создать мобильный клиент сайта thingiverse.com  
+Разрабатывается в свободное время с целью изучения возможностей Flutter
+
 
 
