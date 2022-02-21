@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thingiverse2/api/things_api.dart';
 import 'package:thingiverse2/models/top_things_fifteen.dart';
 
 class ItemsList extends StatefulWidget {
@@ -45,6 +46,6 @@ class _ItemsListState extends State<ItemsList> {
 
   @override
   void initState() {
-    thingslist = loadThings();
+    thingslist = ThingsApi().getTopList(2);
   }
 }

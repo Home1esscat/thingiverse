@@ -1,7 +1,3 @@
-import 'dart:convert';
-import 'dart:developer';
-import 'package:http/http.dart' as http;
-
 class TopThings {
   int? total;
   List<Hits>? hits;
@@ -206,11 +202,4 @@ class Tags {
     return data;
   }
 }
-Future <TopThings> loadThings() async {
-  var url = Uri.parse("https://api.thingiverse.com/search/?sort=popular&page=1&per_page=20");
-  log('URL' + url.toString());
-  var popular = await http.get(url,
-      headers: { 'Authorization' : "Bearer 316f725a8ccef687443578a1bf6603a0" });
-  return TopThings.fromJson(json.decode(popular.body));
 
-}
