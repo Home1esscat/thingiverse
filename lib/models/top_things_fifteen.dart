@@ -207,7 +207,7 @@ class Tags {
   }
 }
 Future <TopThings> loadThings() async {
-  var url = Uri.parse("https://api.thingiverse.com/search/?sort=popular&page=1&per_page=15");
+  var url = Uri.parse("https://api.thingiverse.com/search/?sort=popular&page=1&per_page=20");
   log('URL' + url.toString());
   var popular = await http.get(url,
       headers: { 'Authorization' : "Bearer 316f725a8ccef687443578a1bf6603a0" });
